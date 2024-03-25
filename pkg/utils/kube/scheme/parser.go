@@ -8222,14 +8222,14 @@ var schemaYAML = typed.YAMLObject(`types:
     - name: rule
       type:
         scalar: string
-- name: io.k8s.api.flowcontrol.v1alpha1.FlowDistinguisherMethod
+- name: io.k8s.api.flowcontrol.v1beta1.FlowDistinguisherMethod
   map:
     fields:
     - name: type
       type:
         scalar: string
       default: ""
-- name: io.k8s.api.flowcontrol.v1alpha1.FlowSchema
+- name: io.k8s.api.flowcontrol.v1beta1.FlowSchema
   map:
     fields:
     - name: apiVersion
@@ -8244,13 +8244,13 @@ var schemaYAML = typed.YAMLObject(`types:
       default: {}
     - name: spec
       type:
-        namedType: io.k8s.api.flowcontrol.v1alpha1.FlowSchemaSpec
+        namedType: io.k8s.api.flowcontrol.v1beta1.FlowSchemaSpec
       default: {}
     - name: status
       type:
-        namedType: io.k8s.api.flowcontrol.v1alpha1.FlowSchemaStatus
+        namedType: io.k8s.api.flowcontrol.v1beta1.FlowSchemaStatus
       default: {}
-- name: io.k8s.api.flowcontrol.v1alpha1.FlowSchemaCondition
+- name: io.k8s.api.flowcontrol.v1beta1.FlowSchemaCondition
   map:
     fields:
     - name: lastTransitionTime
@@ -8269,50 +8269,50 @@ var schemaYAML = typed.YAMLObject(`types:
     - name: type
       type:
         scalar: string
-- name: io.k8s.api.flowcontrol.v1alpha1.FlowSchemaSpec
+- name: io.k8s.api.flowcontrol.v1beta1.FlowSchemaSpec
   map:
     fields:
     - name: distinguisherMethod
       type:
-        namedType: io.k8s.api.flowcontrol.v1alpha1.FlowDistinguisherMethod
+        namedType: io.k8s.api.flowcontrol.v1beta1.FlowDistinguisherMethod
     - name: matchingPrecedence
       type:
         scalar: numeric
       default: 0
     - name: priorityLevelConfiguration
       type:
-        namedType: io.k8s.api.flowcontrol.v1alpha1.PriorityLevelConfigurationReference
+        namedType: io.k8s.api.flowcontrol.v1beta1.PriorityLevelConfigurationReference
       default: {}
     - name: rules
       type:
         list:
           elementType:
-            namedType: io.k8s.api.flowcontrol.v1alpha1.PolicyRulesWithSubjects
+            namedType: io.k8s.api.flowcontrol.v1beta1.PolicyRulesWithSubjects
           elementRelationship: atomic
-- name: io.k8s.api.flowcontrol.v1alpha1.FlowSchemaStatus
+- name: io.k8s.api.flowcontrol.v1beta1.FlowSchemaStatus
   map:
     fields:
     - name: conditions
       type:
         list:
           elementType:
-            namedType: io.k8s.api.flowcontrol.v1alpha1.FlowSchemaCondition
+            namedType: io.k8s.api.flowcontrol.v1beta1.FlowSchemaCondition
           elementRelationship: associative
           keys:
           - type
-- name: io.k8s.api.flowcontrol.v1alpha1.GroupSubject
+- name: io.k8s.api.flowcontrol.v1beta1.GroupSubject
   map:
     fields:
     - name: name
       type:
         scalar: string
       default: ""
-- name: io.k8s.api.flowcontrol.v1alpha1.LimitResponse
+- name: io.k8s.api.flowcontrol.v1beta1.LimitResponse
   map:
     fields:
     - name: queuing
       type:
-        namedType: io.k8s.api.flowcontrol.v1alpha1.QueuingConfiguration
+        namedType: io.k8s.api.flowcontrol.v1beta1.QueuingConfiguration
     - name: type
       type:
         scalar: string
@@ -8322,7 +8322,7 @@ var schemaYAML = typed.YAMLObject(`types:
       fields:
       - fieldName: queuing
         discriminatorValue: Queuing
-- name: io.k8s.api.flowcontrol.v1alpha1.LimitedPriorityLevelConfiguration
+- name: io.k8s.api.flowcontrol.v1beta1.LimitedPriorityLevelConfiguration
   map:
     fields:
     - name: assuredConcurrencyShares
@@ -8331,9 +8331,9 @@ var schemaYAML = typed.YAMLObject(`types:
       default: 0
     - name: limitResponse
       type:
-        namedType: io.k8s.api.flowcontrol.v1alpha1.LimitResponse
+        namedType: io.k8s.api.flowcontrol.v1beta1.LimitResponse
       default: {}
-- name: io.k8s.api.flowcontrol.v1alpha1.NonResourcePolicyRule
+- name: io.k8s.api.flowcontrol.v1beta1.NonResourcePolicyRule
   map:
     fields:
     - name: nonResourceURLs
@@ -8348,28 +8348,28 @@ var schemaYAML = typed.YAMLObject(`types:
           elementType:
             scalar: string
           elementRelationship: associative
-- name: io.k8s.api.flowcontrol.v1alpha1.PolicyRulesWithSubjects
+- name: io.k8s.api.flowcontrol.v1beta1.PolicyRulesWithSubjects
   map:
     fields:
     - name: nonResourceRules
       type:
         list:
           elementType:
-            namedType: io.k8s.api.flowcontrol.v1alpha1.NonResourcePolicyRule
+            namedType: io.k8s.api.flowcontrol.v1beta1.NonResourcePolicyRule
           elementRelationship: atomic
     - name: resourceRules
       type:
         list:
           elementType:
-            namedType: io.k8s.api.flowcontrol.v1alpha1.ResourcePolicyRule
+            namedType: io.k8s.api.flowcontrol.v1beta1.ResourcePolicyRule
           elementRelationship: atomic
     - name: subjects
       type:
         list:
           elementType:
-            namedType: io.k8s.api.flowcontrol.v1alpha1.Subject
+            namedType: io.k8s.api.flowcontrol.v1beta1.Subject
           elementRelationship: atomic
-- name: io.k8s.api.flowcontrol.v1alpha1.PriorityLevelConfiguration
+- name: io.k8s.api.flowcontrol.v1beta1.PriorityLevelConfiguration
   map:
     fields:
     - name: apiVersion
@@ -8384,13 +8384,13 @@ var schemaYAML = typed.YAMLObject(`types:
       default: {}
     - name: spec
       type:
-        namedType: io.k8s.api.flowcontrol.v1alpha1.PriorityLevelConfigurationSpec
+        namedType: io.k8s.api.flowcontrol.v1beta1.PriorityLevelConfigurationSpec
       default: {}
     - name: status
       type:
-        namedType: io.k8s.api.flowcontrol.v1alpha1.PriorityLevelConfigurationStatus
+        namedType: io.k8s.api.flowcontrol.v1beta1.PriorityLevelConfigurationStatus
       default: {}
-- name: io.k8s.api.flowcontrol.v1alpha1.PriorityLevelConfigurationCondition
+- name: io.k8s.api.flowcontrol.v1beta1.PriorityLevelConfigurationCondition
   map:
     fields:
     - name: lastTransitionTime
@@ -8409,19 +8409,19 @@ var schemaYAML = typed.YAMLObject(`types:
     - name: type
       type:
         scalar: string
-- name: io.k8s.api.flowcontrol.v1alpha1.PriorityLevelConfigurationReference
+- name: io.k8s.api.flowcontrol.v1beta1.PriorityLevelConfigurationReference
   map:
     fields:
     - name: name
       type:
         scalar: string
       default: ""
-- name: io.k8s.api.flowcontrol.v1alpha1.PriorityLevelConfigurationSpec
+- name: io.k8s.api.flowcontrol.v1beta1.PriorityLevelConfigurationSpec
   map:
     fields:
     - name: limited
       type:
-        namedType: io.k8s.api.flowcontrol.v1alpha1.LimitedPriorityLevelConfiguration
+        namedType: io.k8s.api.flowcontrol.v1beta1.LimitedPriorityLevelConfiguration
     - name: type
       type:
         scalar: string
@@ -8431,18 +8431,18 @@ var schemaYAML = typed.YAMLObject(`types:
       fields:
       - fieldName: limited
         discriminatorValue: Limited
-- name: io.k8s.api.flowcontrol.v1alpha1.PriorityLevelConfigurationStatus
+- name: io.k8s.api.flowcontrol.v1beta1.PriorityLevelConfigurationStatus
   map:
     fields:
     - name: conditions
       type:
         list:
           elementType:
-            namedType: io.k8s.api.flowcontrol.v1alpha1.PriorityLevelConfigurationCondition
+            namedType: io.k8s.api.flowcontrol.v1beta1.PriorityLevelConfigurationCondition
           elementRelationship: associative
           keys:
           - type
-- name: io.k8s.api.flowcontrol.v1alpha1.QueuingConfiguration
+- name: io.k8s.api.flowcontrol.v1beta1.QueuingConfiguration
   map:
     fields:
     - name: handSize
@@ -8457,7 +8457,7 @@ var schemaYAML = typed.YAMLObject(`types:
       type:
         scalar: numeric
       default: 0
-- name: io.k8s.api.flowcontrol.v1alpha1.ResourcePolicyRule
+- name: io.k8s.api.flowcontrol.v1beta1.ResourcePolicyRule
   map:
     fields:
     - name: apiGroups
@@ -8487,7 +8487,7 @@ var schemaYAML = typed.YAMLObject(`types:
           elementType:
             scalar: string
           elementRelationship: associative
-- name: io.k8s.api.flowcontrol.v1alpha1.ServiceAccountSubject
+- name: io.k8s.api.flowcontrol.v1beta1.ServiceAccountSubject
   map:
     fields:
     - name: name
@@ -8498,22 +8498,22 @@ var schemaYAML = typed.YAMLObject(`types:
       type:
         scalar: string
       default: ""
-- name: io.k8s.api.flowcontrol.v1alpha1.Subject
+- name: io.k8s.api.flowcontrol.v1beta1.Subject
   map:
     fields:
     - name: group
       type:
-        namedType: io.k8s.api.flowcontrol.v1alpha1.GroupSubject
+        namedType: io.k8s.api.flowcontrol.v1beta1.GroupSubject
     - name: kind
       type:
         scalar: string
       default: ""
     - name: serviceAccount
       type:
-        namedType: io.k8s.api.flowcontrol.v1alpha1.ServiceAccountSubject
+        namedType: io.k8s.api.flowcontrol.v1beta1.ServiceAccountSubject
     - name: user
       type:
-        namedType: io.k8s.api.flowcontrol.v1alpha1.UserSubject
+        namedType: io.k8s.api.flowcontrol.v1beta1.UserSubject
     unions:
     - discriminator: kind
       fields:
@@ -8523,7 +8523,7 @@ var schemaYAML = typed.YAMLObject(`types:
         discriminatorValue: ServiceAccount
       - fieldName: user
         discriminatorValue: User
-- name: io.k8s.api.flowcontrol.v1alpha1.UserSubject
+- name: io.k8s.api.flowcontrol.v1beta1.UserSubject
   map:
     fields:
     - name: name
